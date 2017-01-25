@@ -1,0 +1,1 @@
+﻿$programs = [System.Collections.Generic.List[System.Object]](choco list --localonly) #grabs the stuff installed
