@@ -9,13 +9,14 @@ $programs = $programs | ForEach-Object {
 
 Echo $programs
 
-$input = Read-Host -Prompt "Do you accept these programs? Yes = [Y] No = [N]"
-$input = $input.ToLower
+$user_input = Read-Host -Prompt "Do you accept these programs? Yes = [Y] No = [N]"
+$user_input = $user_input.ToLower()
 
-if ( $input = "y" ) { #if statements to read input
+if ( $user_input -eq "y" ) { #if statements to read input
+    echo "later"
     #do junk
     }
-ElseIf ( $input = "n" ) {
+ElseIf ( $user_input -eq "n" ) {
     echo "Bye bye"
     }
 Else {
