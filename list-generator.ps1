@@ -1,4 +1,6 @@
-﻿$programs = [System.Collections.Generic.List[System.Object]](choco list --localonly) #grabs the stuff installed
+﻿Clear-Host
+
+$programs = [System.Collections.Generic.List[System.Object]](choco list --localonly) #grabs the stuff installed
 $programs.RemoveAt(0) #removes the First line (junk)
 $programs.RemoveAt($programs.Count - 1) #Removes the last line (junk)
 
@@ -9,7 +11,7 @@ $programs = $programs | ForEach-Object {
 
 Echo $programs
 
-$user_input = Read-Host -Prompt "Do you accept these programs? Yes = [Y] No = [N]"
+$user_input = Read-Host -Prompt "`nDo you accept these programs? `nYes = [Y] No = [N] `n"
 $user_input = $user_input.ToLower()
 
 if ( $user_input -eq "y" ) { #if statements to read input
@@ -17,8 +19,12 @@ if ( $user_input -eq "y" ) { #if statements to read input
     #do junk
     }
 ElseIf ( $user_input -eq "n" ) {
-    echo "Bye bye"
+    echo "`nBye bye `n"
+    Pause
+    Exit
     }
 Else {
-    echo "Not valid input"
+    echo "`nNot valid input `n"
+    Pause
+    Exit
     }
