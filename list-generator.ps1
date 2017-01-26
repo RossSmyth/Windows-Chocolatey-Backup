@@ -6,4 +6,18 @@ $programs = $programs | ForEach-Object {
     $_ = $_.Split(" ")[0]
     $_
     }
+
 Echo $programs
+
+$input = Read-Host -Prompt "Do you accept these programs? Yes = [Y] No = [N]"
+$input = $input.ToLower
+
+if ( $input = "y" ) { #if statements to read input
+    #do junk
+    }
+ElseIf ( $input = "n" ) {
+    echo "Bye bye"
+    }
+Else {
+    echo "Not valid input"
+    }
